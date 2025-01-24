@@ -1,0 +1,15 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+
+.Accordion-container{
+    padding:20px;
+    margin:20px;
+}
+.accordion-icon{
+    padding:5px;
+}
+.accordion-icon:hover{
+    background-color: lightgray;
+}
