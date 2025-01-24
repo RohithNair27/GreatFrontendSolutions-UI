@@ -1,0 +1,17 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    width:30%;
+    align-self: center;
+    justify-self: center;
+    border:1px black solid;
+    margin:20px;
+}
+
+textarea, input, button{
+    margin:20px;
+}
