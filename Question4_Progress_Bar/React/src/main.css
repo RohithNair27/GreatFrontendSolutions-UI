@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+}
+.bar-container {
+  border: 1px black solid;
+  width: 400px;
+  height: 10px;
+  margin: 10px;
+}
+.bar {
+  background-color: green;
+  height: 100%;
+  transition: width 2000ms;
+}

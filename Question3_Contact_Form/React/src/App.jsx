@@ -2,25 +2,28 @@ import { useState } from "react";
 import { submitForm } from "./utils/submitForm";
 
 function App() {
-    const URL= 'https://www.greatfrontend.com/api/questions/contact-form'
+  const URL = "https://www.greatfrontend.com/api/questions/contact-form";
 
-  const [inputFields, setInputField] = useState([
-    {
-      id: 0,
-      type: "text",
-      placeholder: "Enter your name",
-      required: true,
-      value: "",
-    },
+  const input = [
     {
       id: 1,
       type: "text",
+      placeholder: "Enter your name",
+      required: true,
+    },
+    {
+      id: 2,
+      type: "text",
       placeholder: "Enter your email",
       required: true,
-      value: "",
     },
-  ]);
-  const [detailsInput, setInputDetails] = useState("");
+  ];
+
+  const [inputFields, setInputField] = useState({
+    name: "",
+    email: "",
+    details: "",
+  });
 
   async function submitForm(event) {
     event.preventDefault();
@@ -30,9 +33,9 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: inputFields[0].value,
-        email: inputFields[1],
-        message: detailsInput,
+        name: inputFields.name,
+        email: inputFields.email,
+        message: inputFields.details,
       }),
     });
     const text = await response.text();
