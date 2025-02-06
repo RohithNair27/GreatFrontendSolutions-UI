@@ -6,47 +6,44 @@ const HTMLbutton = document.getElementById("HTML-button");
 const CSSbutton = document.getElementById("CSS-button");
 const JSbutton = document.getElementById("JS-button");
 
-function onClikButton() {}
+const ParaButtonObj = [
+  {
+    para: HTMLpara,
+    button: HTMLbutton,
+  },
+  {
+    para: CSSpara,
+    button: CSSbutton,
+  },
+  {
+    para: JSpara,
+    button: JSbutton,
+  },
+];
 
 // Use one method to attach the event listener
 window.addEventListener("load", () => {
-  HTMLpara.classList.remove("invisble");
-  CSSpara.classList.add("invisble");
-  JSpara.classList.add("invisble");
-
-  HTMLbutton.classList.add("active");
-  CSSbutton.classList.remove("active");
-  JSbutton.classList.remove("active");
+  onClickTabs(HTMLbutton);
 });
 
-HTMLbutton.addEventListener("click", (e) => {
-  e.preventDefault();
-  HTMLpara.classList.remove("invisble");
-  CSSpara.classList.add("invisble");
-  JSpara.classList.add("invisble");
-
-  HTMLbutton.classList.add("active");
-  CSSbutton.classList.remove("active");
-  JSbutton.classList.remove("active");
+HTMLbutton.addEventListener("click", () => {
+  onClickTabs(HTMLbutton);
 });
 CSSbutton.addEventListener("click", (e) => {
-  e.preventDefault();
-  HTMLpara.classList.add("invisble");
-  CSSbutton.classList.add("active");
-  CSSpara.classList.remove("invisble");
-  JSpara.classList.add("invisble");
-
-  HTMLbutton.classList.remove("active");
-  CSSbutton.classList.add("active");
-  JSbutton.classList.remove("active");
+  onClickTabs(CSSbutton);
 });
 JSbutton.addEventListener("click", (e) => {
-  e.preventDefault();
-  HTMLpara.classList.add("invisble");
-  CSSpara.classList.add("invisble");
-  JSpara.classList.remove("invisble");
-
-  HTMLbutton.classList.remove("active");
-  CSSbutton.classList.remove("active");
-  JSbutton.classList.add("active");
+  onClickTabs(JSbutton);
 });
+
+function onClickTabs(tabName) {
+  ParaButtonObj.forEach((eachItem) => {
+    if (tabName !== eachItem.button) {
+      eachItem.button.classList.remove("active");
+      eachItem.para.classList.add("invisble");
+    } else {
+      eachItem.button.classList.add("active");
+      eachItem.para.classList.remove("invisble");
+    }
+  });
+}

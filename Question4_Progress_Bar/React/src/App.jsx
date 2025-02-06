@@ -3,14 +3,23 @@ import { useState, useEffect } from "react";
 function ProgressBar() {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
+    // let interval = setInterval(() => {
+    //   //   setProgress((prev) => {
+    //   //     if (prev >= 100) {
+    //   //       clearInterval(interval);
+    //   //       return 100;
+    //   //     }
+    //   //     return prev + 10;
+    //   //   });
+
+    // });
     let interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 10;
-      });
+      if (progress < 100) {
+        setProgress(progress + 10);
+      } else {
+        setProgress(100);
+        clearInterval(interval);
+      }
     });
   }, []);
   return (
