@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form button {
+  all: unset;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fab005;
+}
+form input {
+  margin: 10px;
+}
+form select {
+  margin: 10px;
+}
+.input-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
