@@ -1,20 +1,20 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html"
+    "start": "parcel src/index.html"
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "parcel": "^2.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "parcel": "^2.13.3",
     "process": "^0.11.10"
   }
 }
