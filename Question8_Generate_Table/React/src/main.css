@@ -4,6 +4,20 @@ body {
   form {
     display: flex;
     flex-direction: column;
+    width: fit-content;
+  }
+  .page-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .input-container {
+    margin-top: 10px;
+  }
+  .input-container label {
+    margin-right: 10px;
   }
   .box {
     width: 30px;
@@ -16,5 +30,9 @@ body {
   .table-container {
     width: fit-content;
     display: grid;
+    margin-top: 10px;
+  }
+  button {
+    margin-top: 10px;
   }
   

@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div className="page-container">
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="input-container">
           <label htmlFor="rows-input">Rows</label>
           <input
             type="number"
@@ -31,7 +31,7 @@ export default function App() {
             onChange={(event) => setRows(event.target.value)}
           />
         </div>
-        <div>
+        <div className="input-container">
           <label htmlFor="columns-input">Columns</label>
           <input
             type="number"
